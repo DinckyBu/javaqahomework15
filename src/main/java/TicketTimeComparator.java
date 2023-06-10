@@ -10,9 +10,9 @@ public class TicketTimeComparator implements Comparator<Ticket> {
         if (time1 < time2) {
             return -1;
         }
-            if (time1 > time2) {
-                return 1;
-            }
-            return 0;
+        if (time1 > time2) {
+            return 1;
+        }
+        return 0;
     }
 }

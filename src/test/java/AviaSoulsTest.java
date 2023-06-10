@@ -30,6 +30,7 @@ public class AviaSoulsTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void compareToInOrder() {
         AviaSouls manager = new AviaSouls();
@@ -49,10 +50,11 @@ public class AviaSoulsTest {
         manager.add(ticket6);
 
         Ticket[] expected = {ticket1, ticket5};
-        Ticket[] actual = manager.search("SPB","MSK");
+        Ticket[] actual = manager.search("SPB", "MSK");
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void compareToEqual() {
         AviaSouls manager = new AviaSouls();
@@ -103,6 +105,7 @@ public class AviaSoulsTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void compareTo0() {
         AviaSouls manager = new AviaSouls();
@@ -121,10 +124,11 @@ public class AviaSoulsTest {
         manager.add(ticket5);
         manager.add(ticket6);
 
-        Ticket[] expected = { };
+        Ticket[] expected = {};
         Ticket[] actual = manager.search("MSK", "KZN");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void comparator() {
         AviaSouls manager = new AviaSouls();
@@ -146,10 +150,11 @@ public class AviaSoulsTest {
         Comparator<Ticket> comparator = new TicketTimeComparator();
 
         Ticket[] expected = {ticket1, ticket5};
-        Ticket[] actual = manager.search("SPB","MSK", comparator);
+        Ticket[] actual = manager.searchAndSortBy("SPB", "MSK", comparator);
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void comparator1() {
         AviaSouls manager = new AviaSouls();
@@ -171,7 +176,7 @@ public class AviaSoulsTest {
         Comparator<Ticket> comparator = new TicketTimeComparator();
 
         Ticket[] expected = {ticket3};
-        Ticket[] actual = manager.search("SPB","UFA", comparator);
+        Ticket[] actual = manager.searchAndSortBy("SPB", "UFA", comparator);
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -196,8 +201,8 @@ public class AviaSoulsTest {
 
         Comparator<Ticket> comparator = new TicketTimeComparator();
 
-        Ticket[] expected = { };
-        Ticket[] actual = manager.search("SPB","KZN", comparator);
+        Ticket[] expected = {};
+        Ticket[] actual = manager.searchAndSortBy("SPB", "KZN", comparator);
 
         Assertions.assertArrayEquals(expected, actual);
     }
